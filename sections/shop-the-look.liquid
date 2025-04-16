@@ -1,0 +1,131 @@
+{% schema %}
+{
+  "name": "Shop the Look",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "look_image",
+      "label": "Look Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Shop the Look"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Linked Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Shop the Look",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="shop-the-look-section">
+  {% if section.settings.look_image != blank %}
+    <div class="look-image">
+      <img src="{{ section.settings.look_image | image_url: width: 1200 }}" alt="Shop the Look" loading="lazy">
+    </div>
+  {% endif %}
+
+  <h2 class="shop-the-look-heading">{{ section.settings.heading }}</h2>
+
+  <div class="product-grid">
+    {% for block in section.blocks %}
+      {% assign product = all_products[block.settings.product] %}
+      {% if product %}
+        <div class="product-item">
+          <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title }}">
+            <div class="product-details">
+              <h3>{{ product.title }}</h3>
+              <p>{{ product.price | money }}</p>
+              <button>{{ section.settings.button_text }}</button>
+            </div>
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .shop-the-look-section {
+    text-align: center;
+    margin: 3rem 0;
+  }
+  .look-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+  .shop-the-look-heading {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+  }
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .product-item {
+    width: 220px;
+    text-align: left;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+  .product-item:hover {
+    transform: translateY(-5px);
+  }
+  .product-item img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  .product-details h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.25rem;
+  }
+  .product-details p {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .product-details button {
+    background: #ff3c38;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .product-details button:hover {
+    background: #e73330;
+  }
+</style>
