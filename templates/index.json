@@ -1,1 +1,119 @@
-{"sections":{"image-with-text":{"type":"image-with-text","blocks":{"heading":{"type":"heading","settings":{"heading":"STYLE IN EVERY STEP.","heading_size":"h1"}},"button":{"type":"button","settings":{"button_label":"GET READY","button_link":"shopify:\/\/collections\/all","button_style_secondary":false}}},"block_order":["heading","button"],"settings":{"image":"shopify:\/\/shop_images\/banner-1.jpg","height":"adapt","desktop_image_width":"medium","layout":"text_first","image_behavior":"none","content_layout":"overlap","desktop_content_position":"middle","desktop_content_alignment":"center","mobile_content_alignment":"left","section_color_scheme":"scheme-1","color_scheme":"scheme-018ec1c9-3b9c-4f16-a3d5-2ccad9216402","padding_top":40,"padding_bottom":0}},"featured_collection":{"type":"featured-collection","settings":{"collection":"all","products_to_show":4,"title":"","heading_size":"h2","description":"","show_description":false,"description_style":"body","columns_desktop":4,"enable_desktop_slider":false,"full_width":false,"show_view_all":false,"view_all_style":"solid","color_scheme":"scheme-1","image_ratio":"portrait","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"2","swipe_on_mobile":false,"padding_top":0,"padding_bottom":40}}},"order":["image-with-text","featured_collection"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "STYLE IN EVERY STEP.",
+            "heading_size": "h1"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "GET READY",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/banner-1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-018ec1c9-3b9c-4f16-a3d5-2ccad9216402",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 4,
+        "title": "",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "shop_the_look_W3kPF9": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_rMK7ga": {
+          "type": "product",
+          "settings": {
+            "product": "gocap-the-speed-project-warm-desert"
+          }
+        },
+        "product_Y8QYJy": {
+          "type": "product",
+          "settings": {
+            "product": "cierzo-cx-polarized-sunglasses"
+          }
+        },
+        "product_L73k6r": {
+          "type": "product",
+          "settings": {
+            "product": "pns-balance-shorts"
+          }
+        }
+      },
+      "block_order": [
+        "product_rMK7ga",
+        "product_Y8QYJy",
+        "product_L73k6r"
+      ],
+      "name": "Shop the Look",
+      "settings": {
+        "look_image": "shopify://shop_images/singlet-tci.png",
+        "heading": "Shop the Look",
+        "button_text": "Shop Now"
+      }
+    }
+  },
+  "order": [
+    "image-with-text",
+    "shop_the_look_W3kPF9",
+    "featured_collection"
+  ]
+}
