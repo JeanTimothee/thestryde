@@ -18,6 +18,31 @@
       "id": "button_text",
       "label": "Button Text",
       "default": "Shop Now"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select Product"
+    },
+    {
+      "type": "range",
+      "id": "top_position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position (Top %)",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "left_position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position (Left %)",
+      "default": 50
     }
   ],
   "blocks": [
@@ -43,71 +68,104 @@
 }
 {% endschema %}
 
-<div class="shop-the-look-section">
+<div class="shop-the-look-section page-width page-width-desktop">
   {% if section.settings.look_image != blank %}
-    <div class="look-image">
-      <img src="{{ section.settings.look_image | image_url: width: 1200 }}" alt="Shop the Look" loading="lazy">
+    <div class="look-image-container">
+      <img
+        src="{{ section.settings.look_image | image_url: width: 1200 }}"
+        alt="Shop the Look"
+        class="look-image"
+        loading="lazy"
+      >
+
+      {% for block in section.blocks %}
+        {% assign product = all_products[block.settings.product] %}
+        {% if product %}
+          <div
+            class="hotspot"
+            style="top: {{ block.settings.top_position }}%; left: {{ block.settings.left_position }}%;"
+          >
+            <div class="hotspot-button">+</div>
+            <div class="hotspot-product">
+              {% render 'card-product', card_product: product, quick_add: true %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   {% endif %}
-
-  <h2 class="shop-the-look-heading">{{ section.settings.heading }}</h2>
-
-  <div class="product-grid">
-    {% for block in section.blocks %}
-      {% assign product = all_products[block.settings.product] %}
-      {% if product %}
-        <div class="product-item">
-          <a href="{{ product.url }}">
-            <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title }}">
-            <div class="product-details">
-              <h3>{{ product.title }}</h3>
-              <p>{{ product.price | money }}</p>
-              <button>{{ section.settings.button_text }}</button>
-            </div>
-          </a>
-        </div>
-      {% endif %}
-    {% endfor %}
-  </div>
 </div>
+
+{% comment %}
+  <div class="shop-the-look-section page-width page-width-desktop">
+    {% if section.settings.look_image != blank %}
+      <div class="look-image">
+        <img src="{{ section.settings.look_image | image_url: width: 1200 }}" alt="Shop the Look" loading="lazy">
+      </div>
+    {% endif %}
+
+    <div style="margin:auto">
+      <div style="width:80%; margin:auto">
+        <h2 class="shop-the-look-heading">{{ section.settings.heading }}</h2>
+
+        <div class="grid product-grid">
+          {% for block in section.blocks %}
+            {% assign product = all_products[block.settings.product] %}
+            {% if product %}
+              <div class="grid__item">
+                {% render 'card-product', card_product: product %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endcomment %}
+
+{% comment %}
+  <div class="product-item">
+    <a href="{{ product.url }}">
+      <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.title }}">
+      <div class="product-details">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.price | money }}</p>
+        <button>{{ section.settings.button_text }}</button>
+      </div>
+    </a>
+  </div>
+{% endcomment %}
 
 <style>
   .shop-the-look-section {
+    margin: 60px auto 60px auto !important;
     text-align: center;
     margin: 3rem 0;
+    display: flex;
+    justify-content: space-around;
   }
   .look-image img {
     max-width: 100%;
-    border-radius: 12px;
+    {% comment %} border-radius: 12px; {% endcomment %}
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
   .shop-the-look-heading {
     font-size: 2rem;
     margin: 1.5rem 0;
   }
-  .product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
+
   .product-item {
     width: 220px;
-    text-align: left;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease;
   }
-  .product-item:hover {
+  {% comment %} .product-item:hover {
     transform: translateY(-5px);
   }
   .product-item img {
     width: 100%;
     border-radius: 6px;
-  }
+  } {% endcomment %}
   .product-details h3 {
     font-size: 1rem;
     margin: 0.5rem 0 0.25rem;
