@@ -48,6 +48,35 @@
         "padding_bottom": 0
       }
     },
+    "shop_the_look_W3kPF9": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_rMK7ga": {
+          "type": "product",
+          "settings": {
+            "product": "gocap-the-speed-project-warm-desert"
+          }
+        },
+        "product_L73k6r": {
+          "type": "product",
+          "settings": {
+            "product": "pns-balance-shorts"
+          }
+        }
+      },
+      "block_order": [
+        "product_rMK7ga",
+        "product_L73k6r"
+      ],
+      "settings": {
+        "look_image": "shopify://shop_images/singlet-tci.png",
+        "heading": "Shop the Look",
+        "button_text": "Shop Now",
+        "product": "cierzo-cx-polarized-sunglasses",
+        "top_position": 50,
+        "left_position": 50
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -74,40 +103,6 @@
         "swipe_on_mobile": false,
         "padding_top": 0,
         "padding_bottom": 40
-      }
-    },
-    "shop_the_look_W3kPF9": {
-      "type": "shop-the-look",
-      "blocks": {
-        "product_rMK7ga": {
-          "type": "product",
-          "settings": {
-            "product": "gocap-the-speed-project-warm-desert"
-          }
-        },
-        "product_Y8QYJy": {
-          "type": "product",
-          "settings": {
-            "product": "cierzo-cx-polarized-sunglasses"
-          }
-        },
-        "product_L73k6r": {
-          "type": "product",
-          "settings": {
-            "product": "pns-balance-shorts"
-          }
-        }
-      },
-      "block_order": [
-        "product_rMK7ga",
-        "product_Y8QYJy",
-        "product_L73k6r"
-      ],
-      "name": "Shop the Look",
-      "settings": {
-        "look_image": "shopify://shop_images/singlet-tci.png",
-        "heading": "Shop the Look",
-        "button_text": "Shop Now"
       }
     }
   },
