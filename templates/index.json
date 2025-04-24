@@ -48,19 +48,43 @@
         "padding_bottom": 0
       }
     },
+    "multicolumn_4eAnmP": {
+      "type": "multicolumn",
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Discover STRYDE — the ultimate destination for stylish running shoes, apparel, and accessories. Where performance meets fashion, and every step is a statement.",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "shop_the_look_W3kPF9": {
       "type": "shop-the-look",
       "blocks": {
         "product_rMK7ga": {
           "type": "product",
           "settings": {
-            "product": "gocap-the-speed-project-warm-desert"
+            "product": "gocap-the-speed-project-warm-desert",
+            "top_position": 50,
+            "left_position": 50
           }
         },
         "product_L73k6r": {
           "type": "product",
           "settings": {
-            "product": "pns-balance-shorts"
+            "product": "pns-balance-shorts",
+            "top_position": 50,
+            "left_position": 50
           }
         }
       },
@@ -72,9 +96,7 @@
         "look_image": "shopify://shop_images/singlet-tci.png",
         "heading": "Shop the Look",
         "button_text": "Shop Now",
-        "product": "cierzo-cx-polarized-sunglasses",
-        "top_position": 50,
-        "left_position": 50
+        "main_text": "Discover STRYDE — the ultimate destination for stylish running shoes, apparel, and accessories. Where performance meets fashion, and every step is a statement."
       }
     },
     "featured_collection": {
@@ -108,6 +130,7 @@
   },
   "order": [
     "image-with-text",
+    "multicolumn_4eAnmP",
     "shop_the_look_W3kPF9",
     "featured_collection"
   ]
