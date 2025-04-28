@@ -75,22 +75,31 @@
           "type": "product",
           "settings": {
             "product": "gocap-the-speed-project-warm-desert",
-            "top_position": 50,
-            "left_position": 50
+            "top_position": 10,
+            "left_position": 56
           }
         },
         "product_L73k6r": {
           "type": "product",
           "settings": {
             "product": "pns-balance-shorts",
-            "top_position": 50,
-            "left_position": 50
+            "top_position": 81,
+            "left_position": 29
+          }
+        },
+        "product_6DA9kE": {
+          "type": "product",
+          "settings": {
+            "product": "cierzo-cx-polarized-sunglasses",
+            "top_position": 30,
+            "left_position": 32
           }
         }
       },
       "block_order": [
         "product_rMK7ga",
-        "product_L73k6r"
+        "product_L73k6r",
+        "product_6DA9kE"
       ],
       "settings": {
         "look_image": "shopify://shop_images/singlet-tci.png",
